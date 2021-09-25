@@ -92,7 +92,6 @@ export default function App() {
 
   React.useEffect(() => {
     checkWallet()
-    getAll();
   }, [])
 
   return (
@@ -110,8 +109,13 @@ export default function App() {
         <p>
           total numbers of waves: {!loading ? <p>loading...</p> : totalWaves}
         </p>
-        <button onClick={connectWallet}> Connect Wallet </button>
-        <p>connected account = {currAccount} </p>
+
+        {currAccount === undefined ? (
+          <button onClick={connectWallet}> Connect Wallet </button>
+        ) : (
+          <p>connected account: {currAccount} </p>
+        )}
+        <br />
         <button onClick={getAll}> Get All Waves </button>
 
         {allWaves.map((wave, index) => {
@@ -124,8 +128,8 @@ export default function App() {
               }}
             >
               <div key={index}>address: {wave.address}</div>
-              <div >time: {wave.timestamp.toString()}</div>
-              <div >message: {wave.message}</div>
+              <div>time: {wave.timestamp.toString()}</div>
+              <div>message: {wave.message}</div>
             </div>
           )
         })}
