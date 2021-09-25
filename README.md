@@ -8,6 +8,8 @@ This project exposes me to the basic Hardhat use case. I've wrote a simple smart
 
 This project also exposes me to the fundamentals of reading and wriitng data to the ethereum blockchain, and also built out a front-end user interface that communicates with the block-chain written in reactJs.
 
+live url: https://waveportal-baseline-student.yunggenius.repl.co/
+
 
 a few shell commands:
 
